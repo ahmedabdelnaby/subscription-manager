@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Subscription Manager</h1>
+
+    <!-- Loading state -->
+    <div id="loadingState">
+      <p>Loading subscriptions...</p>
+    </div>
+
+    <!-- Error state -->
+    <div id="errorState" hidden>
+      <p>Something went wrong while loading the data.</p>
+      <button id="retryButton" type="button">Retry</button>
+    </div>
+
+    <!-- Success state -->
+    <div id="app" hidden>
+      <h2>Add Subscription</h2>
+
+      <form id="subscriptionForm">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <p id="nameError"></p>
+        </div>
+
+        <div>
+          <label for="amount">Monthly Amount:</label>
+          <input type="number" id="amount" name="amount" step="0.01" />
+          <p id="amountError"></p>
+        </div>
+
+        <div>
+          <label for="plan">Plan:</label>
+          <select id="plan" name="plan"></select>
+        </div>
+
+        <div>
+          <label for="status">Status:</label>
+          <select id="status" name="status">
+            <option value="active">active</option>
+            <option value="paused">paused</option>
+            <option value="cancelled">cancelled</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" />
+        </div>
+
+        <button type="submit">Add Subscription</button>
+      </form>
+
+      <hr />
+
+      <h2>Plan Filter</h2>
+      <div id="planFilters"></div>
+
+      <h2>Status Filter</h2>
+      <div id="statusFilters">
+        <button type="button" data-status="all">All</button>
+        <button type="button" data-status="active">active</button>
+        <button type="button" data-status="paused">paused</button>
+        <button type="button" data-status="cancelled">cancelled</button>
+      </div>
+
+      <hr />
+
+      <h2>Summary</h2>
+      <p>Count: <span id="subscriptionCount">0</span></p>
+      <p>Total Monthly Cost: <span id="totalCost">0</span></p>
+      <p>Active Count: <span id="activeCount">0</span></p>
+
+      <hr />
+
+      <h2>Subscriptions</h2>
+
+      <div id="subscriptionList"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

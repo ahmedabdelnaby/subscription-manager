@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+h1,
+h2 {
+  color: #222;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#app,
+#loadingState,
+#errorState {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+#errorState {
+  text-align: center;
+}
+
+#loadingState {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #555;
+}
+
+form button {
+  grid-column: 1 / -1;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px 5px 5px 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#planFilters,
+#statusFilters {
+  margin-bottom: 15px;
+}
+
+#planFilters button,
+#statusFilters button {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+#planFilters button:hover,
+#statusFilters button:hover {
+  background-color: #d6d9dc;
+}
+
+#subscriptionList {
+  display: grid;
+  gap: 15px;
+}
+
+#subscriptionList > div {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+#subscriptionList h3 {
+  margin-top: 0;
+}
+
+#subscriptionList p {
+  margin: 7px 0;
+}
+
+#subscriptionList button {
+  margin-top: 10px;
+  background-color: #333;
+  color: white;
+}
+
+#subscriptionList button[data-action="delete"] {
+  background-color: #c0392b;
+}
+
+#subscriptionCount,
+#totalCost,
+#activeCount {
+  font-weight: bold;
+}
+
+#nameError,
+#amountError {
+  color: #c0392b;
+  margin: 5px 0 0;
+  min-height: 18px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 30px 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  #app,
+  #loadingState,
+  #errorState {
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    grid-column: auto;
+  }
+}
