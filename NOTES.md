@@ -1,6 +1,6 @@
 # NOTES
 
-## 1. How did you make the two requests run at the same time?
+## 1. How did I make the two requests run at the same time?
 
 I started both asynchronous functions before waiting for either result:
 
